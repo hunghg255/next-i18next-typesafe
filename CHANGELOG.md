@@ -1,5 +1,12 @@
 # agile-css
 
+## 1.0.4
+
+### Patch Changes
+
+- d972052: fix lint
+- 1f7f80d: update readme
+
 ## 2.1.11
 
 ### Patch Changes
