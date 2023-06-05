@@ -83,4 +83,4 @@ npm run next-i18next-typesafe
 
 # Demo
 
-![](https://res.cloudinary.com/hunghg255/image/upload/v1685954603/i18next-typesafe_zvdq3u.gif)
+![demo](https://res.cloudinary.com/hunghg255/image/upload/v1685974466/i18n-typesafe_qjxibu.png)
