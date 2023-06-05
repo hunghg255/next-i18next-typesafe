@@ -1,0 +1,52 @@
+{
+  "name": "next-i18next-typesafe",
+  "version": "1.0.3",
+  "license": "MIT",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "next-i18next-typesafe": "./bin/i18n-typesafe.mjs"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub",
+    "test:cli": "node ./dist/cli.mjs -w -p 1234",
+    "release": "changeset publish",
+    "lint": "tsc"
+  },
+  "author": "hunghg255",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@types/node": "^18.15.13",
+    "husky": "^8.0.3",
+    "terser": "^5.17.1",
+    "tslib": "^2.5.2",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "commander": "^10.0.1",
+    "globby": "^13.1.4",
+    "jiti": "^1.18.2",
+    "json-ts": "^1.6.4",
+    "next-i18next": "^13.3.0",
+    "unbuild": "^1.2.1"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "keywords": [
+    "i18n",
+    "Next i18next",
+    "Nextjs"
+  ]
+}
