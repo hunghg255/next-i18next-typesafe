@@ -68,7 +68,6 @@ export async function startCli(cwd = process.cwd(), argv = process.argv) {
     const {
       input: configInput,
       output: configOutput,
-      ...config
     } = defineConfig();
 
     const input = configInput || './srcTest';
@@ -90,7 +89,7 @@ export async function startCli(cwd = process.cwd(), argv = process.argv) {
             if (err) {
               return console.log(err);
             }
-            console.log('The file was saved!');
+            colorConsoleText('The file was saved!', 'green');
           }
         );
       });
@@ -120,7 +119,7 @@ export async function startCli(cwd = process.cwd(), argv = process.argv) {
           if (err) {
             return console.log(err);
           }
-          console.log('The file was saved!');
+          colorConsoleText('The file was saved!', 'green');
         }
       );
 
@@ -133,13 +132,6 @@ export async function startCli(cwd = process.cwd(), argv = process.argv) {
       if (typeof input === 'string') {
         const files = globby.globbySync(input);
         handleFiles(files);
-      } else if (Array.isArray(input)) {
-        for (let i = 0; i < input.length; i++) {
-          const fileGlob = input[i];
-          const files = globby.globbySync(fileGlob);
-
-          handleFiles(files);
-        }
       }
     };
 
