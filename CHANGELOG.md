@@ -1,5 +1,11 @@
 # agile-css
 
+## 1.0.5
+
+### Patch Changes
+
+- bccc7a1: update config library
+
 ## 1.0.4
 
 ### Patch Changes
