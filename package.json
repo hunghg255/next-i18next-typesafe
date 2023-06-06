@@ -35,7 +35,6 @@
     "globby": "^13.1.4",
     "jiti": "^1.18.2",
     "json-ts": "^1.6.4",
-    "next-i18next": "^13.3.0",
     "unbuild": "^1.2.1"
   },
   "exports": {

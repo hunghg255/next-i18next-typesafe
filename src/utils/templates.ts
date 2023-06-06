@@ -1,16 +1,18 @@
-export const templates = ({ paths, interfaceNames }: any) => {
+import { ITemplates } from "../types/type";
+
+export const templates = ({ paths, interfaceNames, library = 'next-i18next' }: ITemplates) => {
   return `
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "${library}";
 import { TFlatten } from "next-i18next-typesafe";
 
-${paths.map((pathItem: any, idx: number) => {
+${paths.map((pathItem: string, idx: number) => {
 return `import { ${interfaceNames[idx]} } from "./${pathItem}";`;
 }).join('\n')}
 
-type TNamespace = ${paths.map((it: any) => `\'${it}\'`).join(' | ')};
+type TNamespace = ${paths.map((it: string) => `\'${it}\'`).join(' | ')};
 
 type TObj = {
-  ${paths.map((pathItem: any, idx: number) => {
+  ${paths.map((pathItem: string, idx: number) => {
 return `${pathItem}: keyof TFlatten<${interfaceNames[idx]}>;`;
 }).join('\n\t')}
 \};

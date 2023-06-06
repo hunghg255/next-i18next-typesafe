@@ -68,6 +68,7 @@ export async function startCli(cwd = process.cwd(), argv = process.argv) {
     const {
       input: configInput,
       output: configOutput,
+      library
     } = defineConfig();
 
     const input = configInput || './srcTest';
@@ -83,7 +84,7 @@ export async function startCli(cwd = process.cwd(), argv = process.argv) {
         fileName = fileName.split('.')[0];
 
         fs.writeFile(
-          path.resolve(process.cwd(), `${configOutput}/${fileName}.ts`),
+          path.resolve(process.cwd(), `${configOutput}/${fileName}.d.ts`),
           `export ${json2ts(data, { rootName: `${fileName}` })}`,
           function (err) {
             if (err) {
@@ -114,7 +115,7 @@ export async function startCli(cwd = process.cwd(), argv = process.argv) {
 
       fs.writeFile(
         path.resolve(process.cwd(), `${configOutput}/index.ts`),
-        templates({ paths: pathArr, interfaceNames }),
+        templates({ paths: pathArr, interfaceNames, library }),
         function (err) {
           if (err) {
             return console.log(err);

@@ -29,7 +29,11 @@ import { defineConfig } from 'next-i18next-typesafe';
 export default defineConfig({
   input: 'public/locales/en/**/*.json',
   output: 'src/i18n',
-})
+  library: 'next-i18next' | 'react-i18next'
+});
+
+// Nextjs use next-i18next
+// React use react-i18next
 ```
 
 ## CLI (file package.json)
